@@ -27,6 +27,7 @@ public class LibraryEntity {
     private String libraryname;
     private String city;
     private String country;
+    public String data;
     public int getId() {
         return id;
     }
