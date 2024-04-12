@@ -1,5 +1,4 @@
 package com.ideabytes.binding;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,6 +27,7 @@ public class BookEntity {
 	private Integer price;
 	private Integer copies;
 	private String 	genre;
+	public String data;
 	public Integer getBookid() {
 		return bookid;
 	}
