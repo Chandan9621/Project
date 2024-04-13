@@ -1,0 +1,36 @@
+
+
+<div class="header">
+  <h1>{{title}}</h1><br>
+</div>
+  <nav class="navbar navbar-expand-sm">
+  <ul  class="nav justify-content-center" id="navbar">
+
+  <li class="nav-item">
+    <a class="nav-link" routerLink=''><b>Home</b></a>
+  </li>
+  <li class="nav-item">
+    <a  class="nav-link" routerLink='log' *ngIf="(router.url==='/reg'||router.url==='/')&&!tokenReplace()"><b>Login</b></a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" routerLink='reg' *ngIf="(router.url==='/log'||router.url==='/')&&!tokenReplace()"><b>Registration</b></a>
+  </li>
+ <li class="nav-item">
+  <a  class="nav-link" routerLink='book' *ngIf="(router.url==='/addbook'||router.url==='/selectionbook'||router.url==='/profile'||router.url==='/') &&tokenReplace()"><b>Book</b></a>
+  </li>
+  <li class="nav-item">
+    <a  class="nav-link" routerLink='addbook' *ngIf="(router.url==='/book'||router.url==='/selectionbook'||router.url==='/profile'||router.url==='/')&&tokenReplace()"><b>AddBook</b></a>
+    </li>
+
+
+   <li class="nav-item">
+    <!-- roterLink to specify the routing destination when the element is clicked -->
+     <a class="nav-link" routerLink='profile' *ngIf="(router.url==='/addbook'||router.url==='/selectionbook'||router.url==='/'||router.url==='/book')&&  tokenReplace()"><b>Profile</b></a>
+  </li>
+  <li class="nav-item">
+  <a  class="nav-link" routerLink='logout'*ngIf="(router.url==='/addbook'||router.url==='/profile'||router.url==='/selectionbook'||router.url==='/'||router.url==='/book')&&tokenReplace()"><b>Logout</b></a>
+   </li>
+ </ul>
+</nav>
+ <br>

@@ -1,0 +1,25 @@
+<!-- <div id="time">
+  <p style="float:right;">{{time}}</p>
+</div>
+<div id="hello">
+  <h2 style="text-align: center;">{{hello}}</h2>
+</div> -->
+
+
+
+<table #tableRef>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Date Of Birth</th>
+    <th>DateIssued</th>
+   </tr>
+  <tr>
+    <td>{{userid}}</td>
+    <td>{{username|uppercase}}</td>
+    <td>{{userdob|date:'dd MMM, yyyy'}}</td>
+    <td>{{datetime|commaBeforeIST}}</td>
+  </tr>
+</table>
+<!-- </div> -->
+<!-- <p #highlight>This is an important Message</p> -->

@@ -1,0 +1,93 @@
+
+     <div class="container">
+
+      <form #formRef [formGroup]="userForm" (submit)="addItem()">
+         <label>Book Author:</label><br>
+        <input type="text" id="author" formControlName="author" placeholder="Enter Author Name"><br>
+        <div *ngIf="log['author'].touched && log['author'].invalid" class="help-block text-danger">
+        <div *ngIf="log['author'].errors && log['author'].errors['required']">Bookname cannot be empty</div>
+       </div>
+      <label>Book Name:</label><br>
+       <input type="text" id="book" formControlName="book" placeholder="Enter Book Name"><br>
+       <div *ngIf="log['book'].touched && log['book'].invalid" class="help-block text-danger">
+      <div *ngIf="log['book'].errors && log['book'].errors['required']">Bookname cannot be empty</div>
+      </div>
+
+
+      <label>Book Copies:</label><br>
+      <input type="number" id="copies" formControlName="copies" placeholder="Enter Book Copies"><br>
+      <div *ngIf="log['copies'].touched && log['copies'].invalid" class="help-block text-danger">
+     <div *ngIf="log['copies'].errors && log['copies'].errors['required']">Bookname cannot be empty</div>
+     </div>
+
+
+     <label>First Published:</label><br>
+     <input type="number" id="firstpublished" formControlName="firstpublished" placeholder="Enter First Published"><br>
+     <div *ngIf="log['firstpublished'].touched && log['firstpublished'].invalid" class="help-block text-danger">
+    <div *ngIf="log['firstpublished'].errors && log['firstpublished'].errors['required']">Bookname cannot be empty</div>
+    </div>
+
+    <label>Genre:</label><br>
+    <input type="text" id="genre" formControlName="genre" placeholder="Enter Genre"><br>
+    <div *ngIf="log['genre'].touched && log['genre'].invalid" class="help-block text-danger">
+   <div *ngIf="log['genre'].errors && log['genre'].errors['required']">Bookname cannot be empty</div>
+   </div>
+
+   <label>Language:</label><br>
+   <input type="text" id="language" formControlName="language" placeholder="Enter Language"><br>
+   <div *ngIf="log['language'].touched && log['language'].invalid" class="help-block text-danger">
+  <div *ngIf="log['language'].errors && log['language'].errors['required']">Bookname cannot be empty</div>
+  </div>
+
+  <label>Price:</label><br>
+  <input type="number" id="price" formControlName="price" placeholder="Enter Price"><br>
+  <div *ngIf="log['price'].touched && log['price'].invalid" class="help-block text-danger">
+ <div *ngIf="log['price'].errors && log['price'].errors['required']">Bookname cannot be empty</div>
+ </div>
+     <label>Volume:</label><br>
+     <input type="number" id="volumesold" formControlName="volumesold" placeholder="Enter Volume"><br><br>
+    <div *ngIf="log['volumesold'].touched && log['volumesold'].invalid" class="help-block text-danger">
+    <div *ngIf="log['volumesold'].errors && log['volumesold'].errors['required']">Bookname cannot be empty</div>
+    </div>
+    <button [disabled]="userForm.invalid" class="btn btn-primary">Additem</button>&nbsp;&nbsp;
+    <button [disabled]="!editMode"(click)="Update()" class="btn btn-primary" id="btnn">Update</button>
+  </form>
+  <h1 style="margin-top: -6px;"></h1>
+<table style="width:100%"[hidden]="TableVisible"#formRef>
+     <tr>
+      <th>BookId</th>
+       <th>Author</th>
+       <th>Book Name</th>
+       <th>Book Copies</th>
+       <th>First Published</th>
+       <th>Genre</th>
+       <th>Language</th>
+       <th>Price</th>
+       <th>Volume</th>
+       <th style="width:2%">Edit</th>
+       <th style="width:1%">Delete</th>
+     </tr>
+     <tr *ngFor="let data of tableData;let i=index">
+    <td>{{bookid}}</td>
+     <td>{{data.author}}</td>
+     <td>{{data.book}}</td>
+     <td>{{data.copies}}</td>
+      <td>{{data.firstpublished}}</td>
+     <td>{{data.genre}}</td>
+     <td>{{data.language}}</td>
+     <td>{{data.price}}</td>
+     <td>{{data.volumesold}}</td>
+     <td>
+    <button type="button"class="btn btn-sm btn-warning"(click)="edit(i)"><mat-icon>edit</mat-icon>Edit</button>
+       </td>
+       <td>
+      <button class="btn btn-danger" type="button" class="btn btn-primary" (click)="confirmationBox(data)"><mat-icon>delete</mat-icon>Delete</button>
+  </td>
+    </tr>
+  </table>
+</div>
+
+    <!-- /<app-Booktable></app-Booktable> -->
+    <!-- <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a> -->
+

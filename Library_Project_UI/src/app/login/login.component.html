@@ -1,0 +1,56 @@
+<!-- <app-user></app-user>  -->
+
+<div class="container">
+
+   <!-- <p>Log In to your Account</p> -->
+            <form [formGroup]="loginform" (submit)="login()">
+
+              <!-- <label>UserName:</label><br> -->
+              <i class="fa fa-user icon"></i>
+              <input type="text" id="name" formControlName="name" placeholder="Enter your Name"><br>
+              <div *ngIf="log['name'].touched && log['name'].invalid" class="help-block text-danger">
+              <div *ngIf="log['name'].errors && log['name'].errors['required']">Please enter name</div>
+              </div>
+              <!-- <label>Password</label>:<br> -->
+              <i class="fa fa-fw fa-eye field-icon toggle-password"></i>
+              <input type="password" id="password" formControlName="password" placeholder="Enter Password"><br>
+              <div *ngIf="log['password'].touched && log['password'].invalid" class="help-block text-danger">
+               <div *ngIf="log['password'].errors && log['password'].errors['required']">Please enter password</div>
+              </div>
+              <button>Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/reg">Forget password</a>
+              <p><a href="#" id="forgotPassword">Click here</a> to reset your password.</p>
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Enter your email address to reset your password:</p>
+                  <input type="email" placeholder="Enter Email" id="email">
+                  <button id="resetPassword">Reset Password</button>
+                </div>
+              
+              </div>
+              <!-- <input type="checkbox">&nbsp;&nbsp;
+              <p>Remember me</p> -->
+            </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

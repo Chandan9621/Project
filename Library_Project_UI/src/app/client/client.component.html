@@ -1,0 +1,46 @@
+<!-- <app-regin [value]="tit"></app-regin> -->
+
+
+
+<div class="container">
+  <h4>Register For Vali Sign Account</h4>
+  <form [formGroup]="registrationForm" (submit)="adduser()">
+    <!-- <div class="form-group"> -->
+         <!-- <label>Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+
+         <i class="fa fa-user icon"></i>
+           <input type="text" id="name" formControlName="name" placeholder="Enter your Name"><br><br>
+              <div *ngIf="reg['name'].touched && reg['name'].invalid" class="help-block text-danger">
+              <div *ngIf="reg['name'].errors && reg['name'].errors['required']">Please enter name</div>
+              </div>
+              <i class="fa fa-user icon"></i>
+              <input type="email" id="email" formControlName="email" placeholder="Enter your email"><br><br>
+                 <div *ngIf="reg['email'].touched && reg['email'].invalid" class="help-block text-danger">
+                 <div *ngIf="reg['email'].errors && reg['email'].errors['required']">Please enter name</div>
+                 </div>
+                 <i class="fa fa-user icon"></i>
+                 <input type="text" id="phone" formControlName="phone" placeholder="Enter your phone"><br><br>
+                    <div *ngIf="reg['phone'].touched && reg['phone'].invalid" class="help-block text-danger">
+                    <div *ngIf="reg['phone'].errors && reg['phone'].errors['required']">Please enter name</div>
+                    </div>
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" id="address" formControlName="address" placeholder="Enter your address"><br><br>
+                       <div *ngIf="reg['address'].touched && reg['address'].invalid" class="help-block text-danger">
+                       <div *ngIf="reg['address'].errors && reg['address'].errors['required']">Please enter name</div>
+                       </div>
+
+              <!-- <label>D.O.B</label>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+              <!-- <i class="fa fa-calendar icon"></i>
+              <input type="date" id="dob" formControlName="dob" placeholder="Enter D.O.B"><br>
+              <div *ngIf="reg['dob'].touched && reg['dob'].invalid" class="help-block text-danger">
+               <div *ngIf="reg['dob'].errors && reg['dob'].errors['required']">Please enter dob</div>
+              </div> -->
+              <button>Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- </div> -->
+  </form>
+</div>
+
+
+
+

@@ -1,0 +1,31 @@
+table {
+  border :2px solid black;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+td, th {
+
+  text-align: center;
+  border :2px solid black;
+  padding-top: 2%;
+  text-align: center;
+
+}
+.container-fluid{
+   margin-top: 50px;
+   margin-bottom: 22%;
+}
+
+/* tr:nth-child(even) {
+
+} */
+
+
+/* table, th, td {
+  border: 5px solid black;
+  border-collapse: collapse;
+  padding-left: 30%;
+
+} */

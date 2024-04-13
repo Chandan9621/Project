@@ -1,0 +1,45 @@
+<!-- <app-user></app-user> -->
+
+
+    <div id="container">
+      <table style="margin-top: 40px;width :100%; text-align:center;"id="data">
+          <tr>
+            <th>BookId</th>
+          <th>Book Author</th>
+          <th>Book Name</th>
+          <th>Book Copies</th>
+          <th>First Published</th>
+          <th>Genre</th>
+          <th>Language</th>
+          <th>Price</th>
+          <th>VolumeSold</th>
+          <th>Select</th>
+          <!-- <th>edit</th>
+          <th>Delete</th> -->
+        </tr>
+        <tr *ngFor="let data of book;">
+          <td>{{data.bookid}}</td>
+          <div *ngIf="data.isEdit">
+            <input type="text" [(ngModel)]="data.author" class="form-control">
+          </div>
+
+          <td>{{data.author}}</td>
+          <td>{{data.book}}</td>
+          <td>{{data.copies}}</td>
+          <td>{{data.firstpublished}}</td>
+          <td>{{data.genre}}</td>
+          <td>{{data.language}}</td>
+          <td>{{data.price}}</td>
+          <td>{{data.volumesold}}</td>
+          <!-- <td><input type="checkbox" name="name1"/>&nbsp;</td> -->
+           <td><input type="checkbox" [checked]="data.checked" (change)="data.checked = !data.checked"></td>
+          </tr>
+      </table>
+      </div>
+      <br>
+      <button class ="btn btn-primary"(click)="add()">Done</button>&nbsp;&nbsp;
+
+
+
+
+

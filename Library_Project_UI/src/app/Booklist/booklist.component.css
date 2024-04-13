@@ -1,0 +1,23 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  /* width: 100%; */
+}
+
+table,td, th {
+  border: 2px solid black;
+  text-align: left;
+  padding: 4px;
+  display:float;
+}
+/* .container{
+
+} */
+
+/* data{
+margin-top: 90px;width :100%; text-align:center;
+} */
+button{
+  margin-bottom:30% ;
+  padding: 3px 3px;
+}
