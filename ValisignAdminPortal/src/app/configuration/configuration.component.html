@@ -1,0 +1,149 @@
+<main id="main">
+  <div class="container mt-5 pt-4">
+   <div class="custom-border">
+       <!-- <div class="container mt-5 pt-5"> -->
+        <h4 style="text-align: center;">Device Configurations</h4>
+        <form [formGroup]="registerFormGroup" (ngSubmit)="submit()">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Name:</label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                <div *ngIf="reg['name'].touched && reg['name'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['name'].errors && reg['name'].errors['required']">Please enter name</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Key:</label>
+                <input type="text" formControlName="ckey" class="form-control" placeholder="Configure Key">
+                <div *ngIf="reg['ckey'].touched && reg['ckey'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['ckey'].errors && reg['ckey'].errors['required']">Please enter key</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Value:</label>
+                <input type="text" formControlName="cvalue" class="form-control" placeholder="Configure Value">
+                <div *ngIf="reg['cvalue'].touched && reg['cvalue'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['cvalue'].errors && reg['cvalue'].errors['required']">Please enter value</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <i class="fas fa-wine-glass"></i>
+          <div class="row justify-content-center">
+            <div class="col-1">
+              <div class="button-container">
+              <button type="submit" class="btn btn-primary mt-2" [disabled]="!registerFormGroup.valid">Add</button>
+              <button type="button" (click)="removeConfig()" class="btn btn-secondary mt-2">Cancel</button>
+            </div>
+            </div>
+          </div>
+
+        </form>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="table-responsive mt-5 pt-1">
+    <div class="container">
+      <table class="table table-striped table-hover table-bordered" id="configDataTable">
+        <thead>
+          <tr>
+            <th class="text-center" colspan="5">Device Configure List</th>
+          </tr>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Key</th>
+            <th scope="col">Value</th>
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="align-middle" *ngFor="let configData of configDataArray; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{configData.name}}</td>
+            <td>{{configData.ckey}}</td>
+            <td>{{configData.cvalue}}</td>
+            <!-- <td><input type="checkbox" value="{{configData.id}}" [(ngModel)]="configData[i].checked"></td> -->
+            <td class="d-flex justify-content-center">
+              <button type="button" class="border-hover-button ms-2 mt-2 w-50" data-bs-toggle="modal" data-bs-target="#configEditDetails"
+                (click)="editConfigData(i)">Edit</button>
+                <!-- <button type="button" class="btn btn-primary ms-2 mt-2 w-50" data-bs-toggle="modal" data-bs-target="#configEditDetails"
+                (click)="editConfigData(i)">Edit</button> -->
+                <!-- <button type="button" class="btn btn-danger ms-2 mt-2 w-50" (click)="deleteConfigData(i)">Delete</button> -->
+              <button type="button" class="border-hover-button1 ms-2 mt-2 w-50" (click)="deleteConfigData(i)">Delete</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+
+<!-- 
+  <div class="modal fade" id="configEditDetails" tabindex="-1" role="dialog" aria-labelledby="configEditModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="configEditModal">Config Information</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+
+<div class="modal fade" id="configEditDetails" tabindex="-1" role="dialog" aria-labelledby="configEditModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="configEditModal">Config Information</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Form fields go here  -->
+        <form [formGroup]="editFormConfigChanges" (ngSubmit)="saveChanges()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="changeName" id="changeName"
+              placeholder="Enter your name">
+
+          </div>
+          <div class="form-group">
+            <label for="text">Ckey</label>
+            <input type="text" class="form-control" formControlName="changeCkey" id="changeCkey"
+              placeholder="Enter your ckey">
+          </div>
+          <div class="form-group">
+            <label for="text">Cvalue</label>
+            <input type="text" class="form-control" formControlName="changeCvalue" id="changeCvalue"
+              placeholder="Enter your cvalue">
+          </div>
+
+          <div class="modal-footer mt-3">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+              [disabled]="!editFormConfigChanges.valid">Save</button>
+            <button type="button" (click)="onClick()" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.custom-border {
+    border:5px solid hwb(90 15% 84%); /* Define the border properties */
+    padding: 20px; /* Add padding to create space for the border */
+    border-radius:15px;
+  }
+  .button-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed to create space between the buttons */
+  }
+  .border-hover-button {
+    padding: 5px 15px;
+    border: 2px solid transparent; /* Initial transparent border */
+    transition: border-color 0.3s; /* Add transition for a smooth effect */
+  
+    /* Other button styles like background-color, text color, etc. */
+    background-color: hsl(256, 92%, 61%);
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .border-hover-button:hover {
+    border-color: hwb(258 24% 41%); /* Change the border color on hover to the desired color */
+  }
+
+  .border-hover-button1 {
+    padding: 5px 15px;
+    border: 2px solid transparent; /* Initial transparent border */
+    transition: border-color 0.3s; /* Add transition for a smooth effect */
+  
+    /* Other button styles like background-color, text color, etc. */
+    background-color: hsl(357, 92%, 61%);
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .border-hover-button1:hover {
+    border-color: rgb(196, 40, 40); /* Change the border color on hover to the desired color */
+  }

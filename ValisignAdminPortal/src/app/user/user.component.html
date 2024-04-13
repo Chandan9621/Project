@@ -1,0 +1,372 @@
+<main id="main">
+<!-- 
+  <div class="container mt-2 pt-5">
+    <div class="custom-border">
+      <div class="container mt-3 pt-1 ">
+        <h4 style="text-align: center;">Users Registration</h4>
+        <form [formGroup]="registerFormGroup" (ngSubmit)="submit()">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Name:</label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                <div *ngIf="reg['name'].touched && reg['name'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['name'].errors && reg['name'].errors['required']">Please enter name</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Email:</label>
+                <input type="email" formControlName="email" class="form-control" placeholder="Email address">
+                <div *ngIf="reg['email'].touched && reg['email'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['email'].errors && reg['email'].errors['required']">Please enter email address</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Contact Number:</label>
+                <input type="tel" formControlName="phone" class="form-control" placeholder="Contact Number">
+                <div *ngIf="reg['phone'].touched && reg['phone'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['phone'].errors && reg['phone'].errors['required']">Please enter contact no.</div>
+                  <div *ngIf="reg['phone'].errors && reg['phone'].errors['minlength']">Please enter minimum 6 digits
+                  </div>
+                  <div *ngIf="reg['phone'].errors && reg['phone'].errors['maxlength'] ">Please enter maximum 10 digits
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Street Address:</label>
+                <input type="text" formControlName="address" class="form-control" placeholder="Street address">
+                <div *ngIf="reg['address'].touched && reg['address'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['address'].errors && reg['address'].errors['required']">Please enter street address
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Street Address1:</label>
+                <input type="text" formControlName="address1" class="form-control" placeholder="Street address1">
+                <div *ngIf="reg['address1'].touched && reg['address1'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['address1'].errors && reg['address1'].errors['required']">Please enter your street
+                    address1</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">City:</label>
+                <input type="text" formControlName="city" class="form-control" placeholder="City">
+                <div *ngIf="reg['city'].touched && reg['city'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['city'].errors && reg['city'].errors['required']">Please enter city</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">Country:</label>
+                <input type="text" formControlName="country" class="form-control" placeholder="Country">
+                <div *ngIf="reg['country'].touched && reg['country'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['country'].errors && reg['country'].errors['required']">Please enter country</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label class="mt-1">ZipCode:</label>
+                <input type="text" formControlName="zipcode" class="form-control" placeholder="Zipcode">
+                <div *ngIf="reg['zipcode'].touched && reg['zipcode'].invalid" class="help-block text-danger">
+                  <div *ngIf="reg['zipcode'].errors && reg['zipcode'].errors['required']">Please enter Zipcode</div>
+                </div>
+              </div>
+            </div> -->
+
+
+            <!-- <div class="col-12 col-md-6">
+              <div class="form-group">
+                - <div class="multiselect-container">
+                  <button (click)="toggleDropdown()">Select App</button>
+            
+                  <div class="dropdown-list" *ngIf="showDropdown">
+                    <label *ngFor="let app of clientsDataArray">
+                      <input type="checkbox"  formControlName="app"  [value]="app.name">{{ app.name }}
+                    </label>
+                    <div *ngIf="reg['app'].touched && reg['app'].invalid" class="help-block text-danger">
+                      <div *ngIf="reg['app'].errors && reg['app'].errors['required']"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            
+          
+
+            <!--original code  -->
+            <!-- <div class="col-12 col-md-6">
+        <div class="form-group">
+          <label class="mt-1">Clients:</label>
+         <div> 
+          <select class="col-md-12" formControlName="app" >
+            <option>Select</option> 
+            <option class="ms-2" *ngFor="let app of clientsDataArray">{{app.name}}</option>  
+            </select>
+          </div>
+          <div *ngIf="reg['app'].touched && reg['app'].invalid" class="help-block text-danger">
+            <div *ngIf="reg['app'].errors && reg['app'].errors['required']">Please select client.</div>
+          </div>
+        </div>
+      </div> 
+
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-1">
+              <div class="button-container">
+                <button type="submit" class="btn btn-primary mt-2"
+                  [disabled]="!registerFormGroup.valid">Register</button>
+                <button type="button" (click)="removeUsers()" class="btn btn-secondary mt-2">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="table-responsive mt-5 pt-4">
+    <div class="container">
+      <table class="table table-striped table-hover table-bordered" id="usersDataTable">
+        <thead>
+          <tr>
+            <th class="text-center" colspan="6">User Registered List</th>
+          </tr>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">UserId</th>
+            <!-- <th scope="col">App</th> -->
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="align-middle" *ngFor="let userData of usersDataArray; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{userData.name}}</td>
+            <td>{{userData.email}}</td>
+            <td>{{userData.phone}}</td>
+            <td>{{userData.userId}}</td>
+            <!-- <td>{{userData.app}}</td> -->
+            <td class="d-flex">
+              <!-- <button type="button" class="btn btn-primary w-50" data-bs-toggle="modal"
+                  data-bs-target="#userEditDetails" (click)="editUserData(i)">Edit</button>
+                  <button type="button" class="btn btn-danger ms-2 w-50"
+                    (click)="deleteUserData(i)">Delete</button> -->
+              <button type="button" class="border-hover-button ms-2 w-50" data-bs-toggle="modal"
+                data-bs-target="#userEditDetails" (click)="editUserData(i)">View</button>
+              <!-- <button style="font-size:5px">Button <i class="fa fa-eye"></i></button> -->
+              <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
+              <!-- <div class="fa fa-eye"><i class="fa fa-eye" aria-hidden="true"></i> <span class="sr-only"></span>eye</div> -->
+              <!-- <li title="eye"><span  (click)="editUserData(i)" class="docs-icon fontb-icon-eye"></span></li> -->
+              <button type="button" class="border-hover-button1 ms-2 w-50" (click)="deleteUserData(i)">Delete</button>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+
+<!--   
+   <div class="modal fade" id="userEditDetails" tabindex="-1" role="dialog" aria-labelledby="userEditModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userEditModal">User Information</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+           <form [formGroup]="editFormUserChanges" (ngSubmit)="saveChanges()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" formControlName="changeName" id="changeName" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" formControlName="changeEmail"  id="changeEmail" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" class="form-control" formControlName="changePhone"  id="changePhone" placeholder="Enter Phone">
+              <div *ngIf="editChangeValues['changePhone'].touched && editChangeValues['changePhone'].invalid" class="help-block text-danger">
+                <div *ngIf="editChangeValues['changePhone'].errors && editChangeValues['changePhone'].errors['required']">Please enter contact no.</div>
+              <div *ngIf="editChangeValues['changePhone'].errors && editChangeValues['changePhone'].errors['maxlength'] ">Please enter maximum 10 digits</div>
+            </div> 
+           </div>
+             <div class="modal-footer mt-3">
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"  [disabled]="!editFormUserChanges.valid">Save</button>
+              <button type="button" (click)="onClick()" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            
+           </div>
+          
+          
+          </form>
+         </div>
+       
+  
+      </div>
+    </div>
+  </div>  -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom-dropdown.component.html -->
+<!-- custom-dropdown.component.html -->
+<!-- <div class="custom-dropdown">
+  <div class="selected-items" (click)="toggleDropdown()">
+    <span *ngFor="let selected of selectedClients" class="selected-item">{{ selected }}</span>
+  </div>
+  <div class="dropdown-list" *ngIf="showDropdown">
+    <label *ngFor="let app of clientsDataArray" class="dropdown-option">
+      <input type="checkbox" [(ngModel)]="app.selected" [value]="app.name"> {{ app.name }}
+    </label>
+  </div>
+</div> -->
+
+
+<!-- <div class="col-12 col-md-6">
+  <div class="form-group">
+    <label class="mt-1">Clients:</label>
+   <div *ngFor="let app of clientsDataArray">
+      <label class="form-check">
+        <input type="checkbox" [formControlName]="'app-' + app.name" class="form-check-input">
+        {{app.name}}
+      </label>
+    </div>
+
+    <div *ngIf="reg['app'].touched && reg['app'].invalid" class="help-block text-danger">
+      <div *ngIf="reg['app'].errors && reg['app'].errors['required']">Please select at least one client.</div>
+    </div>
+  </div>
+</div>  -->
+
+<!-- <div class="col-12 col-md-6">
+  <div class="form-group">
+    <label class="mt-1">Clients:</label>
+    <select class="col-md-12" formControlName="app">
+      <option *ngFor="let client of clientsDataArray" [ngValue]="client.name">
+        {{ client.name }}
+      </option>
+    </select>
+    <div *ngIf="reg['app'].touched && reg['app'].invalid" class="help-block text-danger">
+      <div *ngIf="reg['app'].errors && reg['app'].errors['required']">Please select client.</div>
+    </div>
+  </div>
+</div> -->
+<!-- <h1>ABVCDF</h1>
+<div style="width:50%">
+  <ng-multiselect-dropdown
+      [settings]="dropdownSettings"
+      [data]="dropdownList">
+  </ng-multiselect-dropdown>
+</div> -->
+<!-- <div style="width:50%">
+  <ng-multiselect-dropdown
+      [settings]="dropdownSettings"
+       [value]="dropdownList"> 
+  </ng-multiselect-dropdown>
+</div> -->
+<!-- Multiselect dropdown with checkbox -->
+<!-- <div class="multiselect-container">
+  <button (click)="toggleDropdown()">Select Items</button>
+  <div class="dropdown-list" *ngIf="showDropdown">
+    <label *ngFor="let item of items">
+      <input type="checkbox" [(ngModel)]="item.checked"/> {{ item.name }}
+    </label>
+  </div>
+</div> -->
+
+<!-- 
+<div class="col-12 col-md-6">
+  <div class="form-group" >
+- <div class="multiselect-container">
+  <button (click)="toggleDropdown()">Select App</button>
+
+  <div class="dropdown-list" *ngIf="showDropdown"  >
+    <label *ngFor="let app of clientsDataArray">
+      <input type="checkbox" >{{app.name }}
+    </label>
+ 
+  <div *ngIf="reg['app'].touched && reg['app'].invalid" class="help-block text-danger">
+    <div *ngIf="reg['app'].errors && reg['app'].errors['required']"></div>
+  </div>
+</div>
+</div> 
+</div>
+</div>  -->

@@ -1,0 +1,168 @@
+<main id="main">
+  <div class="abc"> 
+  <div class="container ">
+    <div class="image mt-15 pt-5">  
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="card mt-5">
+          <div class="card-body">
+            <div class="text-center">   
+              <img src="../../assets/images3/valisign.png" alt="ValiSign Logo" class="img-fluid" width="70%"> 
+              <h5 class="card-title"><b>Login</b></h5></div>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                <label for="username" class="form-label">Email</label>
+                <input type="text" class="form-control" placeholder="Email"  id="username" formControlName="username">
+                <div *ngIf="hasError('username', 'required')" class="text-danger">Username is required.</div>
+                <div *ngIf="hasError('username', 'minlength')" class="text-danger">Username must be at least 3 characters long.</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" placeholder="Password"  id="password" formControlName="password">
+                <div *ngIf="hasError('password', 'required')" class="text-danger">Password is required.</div>
+                <div *ngIf="hasError('password', 'minlength')" class="text-danger">Password must be at least 5 characters long.</div>
+              </div>
+              <div class="text-center">
+              <button type="submit" class="btn" [disabled]="!loginForm.valid">Login</button>
+            </div>
+           </form>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- 
+          <section class="vh-100" style="background-color: hsl(219, 27%, 90%);">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                  <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+          
+                      <h3 class="mb-5">Sign in</h3>
+          
+                      <div class="form-outline mb-4">
+                        <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+                        <label class="form-label" for="typeEmailX-2">Email</label>
+                      </div>
+          
+                      <div class="form-outline mb-4">
+                        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                        <label class="form-label" for="typePasswordX-2">Password</label>
+                      </div> -->
+          
+                      <!-- Checkbox -->
+                      <!-- <div class="form-check d-flex justify-content-start mb-4">
+                        <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                        <label class="form-check-label" for="form1Example3"> Remember password </label>
+                      </div>
+          
+                      <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+          
+                      <hr class="my-4"> -->
+<!--           
+                      <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
+                        type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
+                      <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
+                        type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> -->
+          
+                    <!-- </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> -->
+
+<!--          
+<section class="">
+  
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row h-100 justify-content-center align-items-center"> -->
+      <!-- <div class="row gx-lg-5 align-items-center"> -->
+       
+
+        <!-- <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form>
+                <!-- Email input -->
+                <!-- <div class="form-outline mb-4">
+                  <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" formControlName="username">
+                <div *ngIf="hasError('username', 'required')" class="text-danger">Username is required.</div>
+                <div *ngIf="hasError('username', 'minlength')" class="text-danger">Username must be at least 3 characters long.</div>
+                </div> -->
+
+                <!-- Password input -->
+                <!-- <div class="form-outline mb-4">
+                  <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+                <div *ngIf="hasError('password', 'required')" class="text-danger">Password is required.</div>
+                <div *ngIf="hasError('password', 'minlength')" class="text-danger">Password must be at least 5 characters long.</div>
+                </div>
+
+            
+
+     
+                <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button> -->
+                 
+
+               
+              <!-- </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>  -->
